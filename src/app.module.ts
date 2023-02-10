@@ -6,7 +6,7 @@ import { CategoriesModule } from './categories/categories.module';
 import { UsersModule } from './users/users.module';
 import { OrdersModule } from './orders/orders.module';
 import { PaymentMethodsModule } from './payment-methods/payment-methods.module';
-import { OrderItemsModule } from './order-items/order-items.module';
+import { OrderItemsModule } from './order-product/order-products.module';
 
 @Module({
   imports: [ProductsModule, CategoriesModule, UsersModule, OrdersModule, PaymentMethodsModule, OrderItemsModule],
