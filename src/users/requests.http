@@ -1,0 +1,11 @@
+###Cadastrar usuário
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "name": "Adakjd Aklsadjaldkj",
+    "email": "dadafds@fasda.com",
+    "password": "asdadg",
+    "cpf": "12345678978",
+    "cep": "1234567"
+}
