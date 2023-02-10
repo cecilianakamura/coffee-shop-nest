@@ -16,5 +16,8 @@ export class User{
     password:string;
 
     @Column()
+    cpf: string;
+
+    @Column()
     cep: string;
 }
