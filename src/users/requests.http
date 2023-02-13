@@ -10,6 +10,16 @@ Content-Type: application/json
     "cep": "88130680"
 }
 
+###Autenticar usuário
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email": "juannascimento@condominios.com.br",
+    "password": "KW4aXw37nG"
+}
+
+
 ###Encontrar um usuário por ID
 
 GET http://localhost:3000/auth/1
