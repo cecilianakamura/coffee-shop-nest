@@ -19,7 +19,7 @@ import { PaymentMethod } from "./payment-methods/payment-method.entity";
 @Module({
   imports: [TypeOrmModule.forRoot({
     type:'sqlite',
-    database:'db_sqlite',
+    database:'db.sqlite',
     entities: [User, Category, Product, OrderProduct, Order, PaymentMethod],
     synchronize: true,
   }),

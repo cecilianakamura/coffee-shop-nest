@@ -3,11 +3,11 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "name": "Adakjd Aklsadjaldkj",
-    "email": "dadafds@fasda.com",
-    "password": "asdadg",
-    "cpf": "12345678978",
-    "cep": "1234567"
+    "name": "Juan Nascimento",
+    "email": "juannascimento@condominios.com.br",
+    "password": "KW4aXw37nG",
+    "cpf": "49464963603",
+    "cep": "88130680"
 }
 
 ###Encontrar um usuário por ID
