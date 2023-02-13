@@ -13,3 +13,20 @@ Content-Type: application/json
 ###Encontrar um usuário por ID
 
 GET http://localhost:3000/auth/1
+
+###Encontrar um usuário por e-mail
+
+GET http://localhost:3000/auth?email=dadafds@fasda.com
+
+###Deletar usuário por ID
+
+DELETE http://localhost:3000/auth/1
+
+###Atualizar usuário por ID
+
+PATCH http://localhost:3000/auth/1
+content-type: application/json
+
+{
+    "email": "aaaaa@aaaaa.com"
+}
