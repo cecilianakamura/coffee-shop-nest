@@ -9,3 +9,7 @@ Content-Type: application/json
     "cpf": "12345678978",
     "cep": "1234567"
 }
+
+###Encontrar um usuário por ID
+
+GET http://localhost:3000/auth/1

@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { AfterInsert, AfterRemove, AfterUpdate, Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class User{
@@ -20,4 +20,20 @@ export class User{
 
     @Column()
     cep: string;
+
+    @AfterInsert()
+    logInsert(){
+        console.log('Usuário cadastrado com id', this.id);
+
+    }
+
+    @AfterUpdate()
+    logUpdate(){
+        console.log('Usuário atualizado com id', this.id);
+    }
+
+    @AfterRemove()
+    logRemove(){
+        console.log('Usuário excluído com id', this.id);
+    }
 }

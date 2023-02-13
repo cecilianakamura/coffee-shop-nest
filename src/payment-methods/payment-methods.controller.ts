@@ -1,4 +1,7 @@
 import { Controller } from '@nestjs/common';
+import { PaymentMethodsService } from './payment-methods.service';
 
 @Controller('payment-methods')
-export class PaymentMethodsController {}
+export class PaymentMethodsController {
+    constructor (private pmService: PaymentMethodsService){}
+}
