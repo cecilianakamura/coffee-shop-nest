@@ -6,7 +6,6 @@ import { promisify } from "util";
 const scrypt = promisify(_scrypt); //permite utilizar promise ao invés de callbacks (scrypt)
 
 
-
 @Injectable()
 export class AuthService{
     constructor(private usersService: UsersService){}
