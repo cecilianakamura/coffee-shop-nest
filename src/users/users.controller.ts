@@ -34,7 +34,6 @@ export class UsersController {
   @Get('/profile') //acessível apenas se logado
   @UseGuards(AuthGuard)
   profile(@CurrentUser() user: User) {
-    console.log('oi')
     return user;
   }
 
