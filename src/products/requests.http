@@ -1,0 +1,12 @@
+###Cadastrar produto
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "Café em grãos",
+    "description" : "teste",
+    "quantity": 10,
+    "price": 5.99,
+    "photo": ""
+}

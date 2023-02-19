@@ -1,0 +1,26 @@
+###Cadastrar categoria
+
+POST http://localhost:3000/categories
+Content-Type: 
+
+{
+    "name":"Acessórios"
+}
+
+###Encontrar categoria por nome
+GET http://localhost:3000/categories/
+
+
+###Encontrar categoria por ID
+GET http://localhost:3000/categories/
+
+###Deletar categoria por ID
+DELETE http://localhost:3000/categories/
+
+###Atualizar categoria por ID
+PATCH  http://localhost:3000/categories/1
+Content-Type: application/json
+
+{
+    "name":"Acessório"
+}

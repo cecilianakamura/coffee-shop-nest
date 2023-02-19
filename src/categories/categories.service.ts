@@ -8,8 +8,10 @@ export class CategoriesService {
 
     constructor(@InjectRepository(Category) private repo: Repository<Category>){}
 
-    create(){
+    create(name:string){
+        const category = this.repo.create({name});
 
+        return this.repo.save(category);
     }
 
     findOne(id:number){
