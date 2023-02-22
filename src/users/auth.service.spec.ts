@@ -58,7 +58,7 @@ describe('AuthService', () =>{
     expect(hash).toBeDefined();
   });
 
-  it('throws an error if user signs up with email that is in use', async () => {
+  it('throws an error if user signs up with email that is already in use', async () => {
     await service.signup('Julio Thiago Barros','julio.thiago.barros@santacasasjc.com.br','OR6e300Qmy','08587788744','35164335');
     await expect(service.signup('Julio Thiago Barros','julio.thiago.barros@santacasasjc.com.br','KSO923hn','08587788744','00534697')).rejects.toThrow(
       BadRequestException,
