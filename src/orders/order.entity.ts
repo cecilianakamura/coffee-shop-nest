@@ -9,7 +9,7 @@ export class Order{
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({default: 'ativo'})
     status: string;
 
     @OneToMany(() => OrderProduct, (orderproduct) => orderproduct.order)

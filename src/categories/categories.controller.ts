@@ -1,10 +1,10 @@
-import { Body, Controller, Delete, Get, NotFoundException, Param, Patch, Post, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, NotFoundException, Param, Patch, Post, Query, UseGuards } from '@nestjs/common';
 import { CategoriesService } from './categories.service';
 import { CreateCategoryDto } from './dtos/create-category.dto';
 import { Serialize } from 'src/interceptors/serialize.interceptor';
 import { CategoryDto } from './dtos/category.dto';
 import { UpdateCategoryDto } from './dtos/update-category.dto';
-
+import { AdminGuard } from 'src/guards/admin.guard';
 @Controller('categories')
 @Serialize(CategoryDto)
 export class CategoriesController {
@@ -12,6 +12,7 @@ export class CategoriesController {
     constructor(private categoriesService: CategoriesService){}
 
 @Post('/')
+@UseGuards(AdminGuard)
 createCategory (@Body() body: CreateCategoryDto ){
     const category = this.categoriesService.create(
         body.name

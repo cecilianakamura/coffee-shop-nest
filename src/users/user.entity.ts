@@ -22,6 +22,9 @@ export class User{
     @Column()
     cep: string;
 
+    @Column({default: true})
+    admin: boolean;
+
     @OneToMany(()=> Order, (order) => order.user)
     orders: Order[];
 

@@ -2,12 +2,19 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Order } from './order.entity';
 import { Repository } from 'typeorm';
+import { User } from 'src/users/user.entity';
+import { CreateOrderDto } from './dtos/create-order.dto';
 
 @Injectable()
 export class OrdersService {
     constructor(@InjectRepository(Order) private repo: Repository<Order>){}
 
-    create(){}
+    create(orderDto: CreateOrderDto, user: User){
+        const order = this.repo.create(orderDto);
+        order.user = user; //user associado ao pedido
+
+        return this.repo.save(order);
+    }
 
     findOne(id:number){
         return this.repo.findOneBy({id});
