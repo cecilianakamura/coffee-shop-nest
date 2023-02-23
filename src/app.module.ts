@@ -15,16 +15,34 @@ import { OrderProduct } from "./order-product/order-product.entity";
 import { Order } from "./orders/order.entity";
 import { PaymentMethod } from "./payment-methods/payment-method.entity";
 import { APP_PIPE } from "@nestjs/core";
+import { ConfigModule, ConfigService } from "@nestjs/config";
 
 const cookieSession = require('cookie-session'); //importação incompativel com tsconfig
 
 @Module({
-  imports: [TypeOrmModule.forRoot({
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: `.env.${process.env.NODE_ENV}`
+    }),
+    TypeOrmModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => {
+        return {
+          type: 'sqlite',
+          database: config.get<string>('DB_NAME'),
+          synchronize: true,
+          entities:[User, Product, Category, Order, OrderProduct, PaymentMethod]
+        };
+      }
+    }),
+
+   /* TypeOrmModule.forRoot({
     type:'sqlite',
     database: 'db.sqlite',
     entities: [User, Category, Product, OrderProduct, Order, PaymentMethod],
     synchronize: true,
-  }),
+  }),*/
   ProductsModule, 
   CategoriesModule, 
   UsersModule, 
