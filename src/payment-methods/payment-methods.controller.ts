@@ -11,9 +11,7 @@ export class PaymentMethodsController {
     @Post('/')
     @UseGuards(AdminGuard)
     createPaymentMethod (@Body() body: CreatePaymentMethodDto ){
-        const paymentmethod = this.paymentMethodsService.create(
-            body.method
-        );
+        const paymentmethod = this.paymentMethodsService.create(body);
     
         return paymentmethod;
     }

@@ -22,7 +22,7 @@ export class User{
     @Column()
     cep: string;
 
-    @Column({default: true})
+    @Column({default: true}) //TO DO mudar default
     admin: boolean;
 
     @OneToMany(()=> Order, (order) => order.user)

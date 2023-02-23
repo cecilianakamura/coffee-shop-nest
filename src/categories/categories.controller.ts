@@ -14,9 +14,7 @@ export class CategoriesController {
 @Post('/')
 @UseGuards(AdminGuard)
 createCategory (@Body() body: CreateCategoryDto ){
-    const category = this.categoriesService.create(
-        body.name
-    );
+    const category = this.categoriesService.create(body.name);
 
     return category;
 }

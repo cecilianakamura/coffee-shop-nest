@@ -31,7 +31,7 @@ const cookieSession = require('cookie-session'); //importação incompativel com
         return {
           type: 'sqlite',
           database: config.get<string>('DB_NAME'),
-          synchronize: true,
+          synchronize: true, //TO DO mudar p/ false em prod
           entities:[User, Product, Category, Order, OrderProduct, PaymentMethod]
         };
       }
@@ -62,9 +62,14 @@ const cookieSession = require('cookie-session'); //importação incompativel com
   ],
 })
 export class AppModule {
+
+  constructor(
+    private configService : ConfigService
+  ){}
+
   configure(consumer: MiddlewareConsumer ){
      consumer.apply( cookieSession({
-        keys: ['fg321fgj45f$23'],
+        keys: [this.configService.get('COOKIE_KEY')],
       }))
       .forRoutes('*');
   }
