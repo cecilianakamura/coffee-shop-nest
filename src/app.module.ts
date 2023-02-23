@@ -1,4 +1,4 @@
-import { Module } from "@nestjs/common";
+import { MiddlewareConsumer, Module, ValidationPipe } from "@nestjs/common";
 import { ProductsModule } from "./products/products.module";
 import { CategoriesModule } from "./categories/categories.module";
 import { UsersModule } from "./users/users.module";
@@ -14,12 +14,14 @@ import { Product } from "./products/product.entity";
 import { OrderProduct } from "./order-product/order-product.entity";
 import { Order } from "./orders/order.entity";
 import { PaymentMethod } from "./payment-methods/payment-method.entity";
+import { APP_PIPE } from "@nestjs/core";
 
+const cookieSession = require('cookie-session'); //importação incompativel com tsconfig
 
 @Module({
   imports: [TypeOrmModule.forRoot({
     type:'sqlite',
-    database:'db.sqlite',
+    database: 'db.sqlite',
     entities: [User, Category, Product, OrderProduct, Order, PaymentMethod],
     synchronize: true,
   }),
@@ -28,8 +30,24 @@ import { PaymentMethod } from "./payment-methods/payment-method.entity";
   UsersModule, 
   OrdersModule, 
   PaymentMethodsModule, 
-  OrderProductsModule],
+  OrderProductsModule
+],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_PIPE,
+      useValue: new ValidationPipe({
+        whitelist: true //If set to true, validator will strip validated (returned) object of any properties that do not use any validation decorators.
+      }),
+    }
+  ],
 })
-export class AppModule {}
+export class AppModule {
+  configure(consumer: MiddlewareConsumer ){
+     consumer.apply( cookieSession({
+        keys: ['fg321fgj45f$23'],
+      }))
+      .forRoutes('*');
+  }
+}
