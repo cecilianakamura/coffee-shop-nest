@@ -9,7 +9,6 @@ import {
   Query,
   Delete,
   NotFoundException,
-  ClassSerializerInterceptor,
   Session,
 } from '@nestjs/common';
 import { CreateUserDto } from './dtos/create-user.dto';

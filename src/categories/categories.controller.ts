@@ -11,12 +11,10 @@ export class CategoriesController {
 
     constructor(private categoriesService: CategoriesService){}
 
-@Post('/')
+@Post()
 @UseGuards(AdminGuard)
 createCategory (@Body() body: CreateCategoryDto ){
-    const category = this.categoriesService.create(body.name);
-
-    return category;
+    return this.categoriesService.create(body);
 }
 
 @Get('/:id')

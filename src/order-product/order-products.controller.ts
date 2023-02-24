@@ -5,6 +5,4 @@ import { OrderProductService } from './order-product.service';
 export class OrderProductsController {
     constructor (private orderProdService: OrderProductService){}
 
-//TO DO
-
 }

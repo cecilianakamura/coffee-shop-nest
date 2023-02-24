@@ -3,9 +3,9 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "name": "Juan Nascimento",
-    "email": "juannascimento@condominios.com",
-    "password": "KW4aXw37",
+    "name": "Cenoura",
+    "email": "bcenoura@email.com",
+    "password": "KW4aXw40",
     "cpf": "49464963603",
     "cep": "88130680"
 }
@@ -15,12 +15,12 @@ POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-    "email": "juannascimento@condominios.com",
-    "password": "KW4aXw37"
+    "email": "bcenoura@email.com",
+    "password": "KW4aXw40"
 }
 
 ###Usuário autenticado
-GET http://localhost:3000/auth/profile;
+GET http://localhost:3000/auth/profile
 
 
 ###Encerrar sessão do usuário

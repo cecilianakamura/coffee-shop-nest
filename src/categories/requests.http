@@ -2,14 +2,14 @@
 ###Cadastrar categoria
 
 POST http://localhost:3000/categories
-Content-Type: 
+Content-Type: application/json
 
 {
-    "name": "Acessórios"
+    "name": "acessorios"
 }
 
-###Encontrar categoria por nome
-GET http://localhost:3000/categories/
+###TO DO Encontrar categoria por nome, case insensitive, like/contains
+GET http://localhost:3000/categories?name=acessorios
 
 
 ###Encontrar categoria por ID
