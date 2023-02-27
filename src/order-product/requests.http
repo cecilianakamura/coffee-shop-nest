@@ -1,0 +1,10 @@
+### TO DO HTTP
+
+###
+POST http://localhost:3000/order-products
+Content-Type: application/json
+
+{
+    "quantity": 5
+}
+

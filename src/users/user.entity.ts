@@ -1,4 +1,5 @@
-import { AfterInsert, AfterRemove, AfterUpdate, Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Order } from "src/orders/order.entity";
+import { OneToMany, AfterInsert, AfterRemove, AfterUpdate, Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class User{
@@ -21,10 +22,15 @@ export class User{
     @Column()
     cep: string;
 
+    @Column({default: true}) //TO DO mudar default
+    admin: boolean;
+
+    @OneToMany(()=> Order, (order) => order.user)
+    orders: Order[];
+
     @AfterInsert()
     logInsert(){
         console.log('Usuário cadastrado com id', this.id);
-
     }
 
     @AfterUpdate()

@@ -1,0 +1,30 @@
+###TO DO HTTP
+
+###Cadastrar produto
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "Prensa Francesa",
+    "description" : "Projetada para preparar café filtrado. Seu corpo é composto de aço inox 18/10 polido, mais resistente e elegante. O copo em vidro boro silicato garante maior durabilidade por ser mais resistente ao calor, e o cabo em nylon possui uma pega ergonômica confortável as mãos, também resistente ao calor.",
+    "quantity": 10,
+    "price": 45,
+    "photo": ""
+}
+
+###TO DO Consultar produto por ID
+GET http://localhost:3000/products/
+
+###TO DO Consultar produto por descrição
+GET http://localhost:3000/products?description=
+
+###TO DO Atualizar produto por ID
+PATCH http://localhost:3000/products/1
+Content-Type: application/json
+{
+
+}
+
+###TO DO Excluir produto por ID
+DELETE http://localhost:3000/products/1

@@ -1,0 +1,40 @@
+### TO DO HTTP
+
+###Cadastrar pedido
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+    "productId": 1,
+    "quantity": 500
+}
+
+###Atualizar quantidade/produto de um pedido por ID
+PUT http://localhost:3000/orders/order/22/product/2
+Content-Type: application/json
+
+{
+    "quantity": 10
+}
+
+###Atualizar status de um pedido por ID
+PUT http://localhost:3000/orders/status/12
+Content-Type: application/json
+
+{
+    "status":"inativo"
+}
+
+###Buscar pedido por ID
+GET http://localhost:3000/orders/11
+
+###Buscar pedido por status
+GET http://localhost:3000/orders/status/ativo
+
+###Deletar pedido por ID
+DELETE http://localhost:3000/orders/
+Content-Type: application/json
+
+###Deletar item(orderproduct) por ID
+DELETE http://localhost:3000/orders/order/22/orderproduct/25
+Content-Type: application/json

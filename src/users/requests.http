@@ -3,9 +3,9 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "name": "Juan Nascimento",
-    "email": "juannascimento@condominios.com.br",
-    "password": "KW4aXw37nG",
+    "name": "Cenoura",
+    "email": "bcenoura@email.com",
+    "password": "KW4aXw40",
     "cpf": "49464963603",
     "cep": "88130680"
 }
@@ -15,25 +15,27 @@ POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-    "email": "juannascimento@condominios.com.br",
-    "password": "KW4aXw37nG"
+    "email": "bcenoura@email.com",
+    "password": "KW4aXw40"
 }
 
+###Usuário autenticado
+GET http://localhost:3000/auth/profile
+
+
+###Encerrar sessão do usuário
+POST  http://localhost:3000/auth/signout
 
 ###Encontrar um usuário por ID
-
 GET http://localhost:3000/auth/1
 
 ###Encontrar um usuário por e-mail
-
 GET http://localhost:3000/auth?email=dadafds@fasda.com
 
 ###Deletar usuário por ID
-
-DELETE http://localhost:3000/auth/1
+DELETE http://localhost:3000/auth/2
 
 ###Atualizar usuário por ID
-
 PATCH http://localhost:3000/auth/1
 content-type: application/json
 

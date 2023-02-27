@@ -1,9 +1,19 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Order } from "src/orders/order.entity";
+import { Product } from "src/products/product.entity";
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
 
-export class OrderProduct{
+@Entity()
+export class OrderProduct{ // cartItem
 
     @PrimaryGeneratedColumn()
     id: number;
 
-    //quantidade + id produto
+    @Column()
+    quantity: number;
+    
+    @ManyToOne(() => Order, (order) => order.orderproducts)
+    order: Order;
+
+    @ManyToOne(() => Product, (product) => product.orderproducts)
+    product: Product;
 }
