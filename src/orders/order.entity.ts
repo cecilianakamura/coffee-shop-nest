@@ -12,6 +12,9 @@ export class Order{
     @Column({default: 'ativo'})
     status: string;
 
+    // @Column('json', { nullable: true }) //? pode ser nulo
+    // address: object;
+
     @OneToMany(() => OrderProduct, (orderproduct) => orderproduct.order)
     orderproducts: OrderProduct[];
 

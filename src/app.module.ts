@@ -16,6 +16,7 @@ import { Order } from "./orders/order.entity";
 import { PaymentMethod } from "./payment-methods/payment-method.entity";
 import { APP_PIPE } from "@nestjs/core";
 import { ConfigModule, ConfigService } from "@nestjs/config";
+import { AddressesModule } from './addresses/addresses.module';
 
 const cookieSession = require('cookie-session'); //importação incompativel com tsconfig
 
@@ -48,7 +49,7 @@ const cookieSession = require('cookie-session'); //importação incompativel com
   UsersModule, 
   OrdersModule, 
   PaymentMethodsModule, 
-  OrderProductsModule
+  OrderProductsModule, AddressesModule
 ],
   controllers: [AppController],
   providers: [

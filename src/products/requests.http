@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ###TO DO Consultar produto por ID
-GET http://localhost:3000/products/1
+GET http://localhost:3000/products/
 
 ###TO DO Consultar produto por descrição
 GET http://localhost:3000/products?description=

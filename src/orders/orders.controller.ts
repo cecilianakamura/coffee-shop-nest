@@ -24,11 +24,12 @@ export class OrdersController {
         return this.ordersService.create(body,user);
     }
 
-    //atualizar status de um pedido
-    @Put('/status/:id')
+    //atualizar as infos de um pedido
+    @Put('/info/:id')
     @UseGuards(AuthGuard)
-    updateOrderStatus(@Param('id') id: string, @Body() body: UpdateOrderDto){
-        return this.ordersService.updateStatus(parseInt(id), body);
+    @Serialize(UpdateOrderDto)
+    updateOrderInfo(@Param('id') id: string, @Body() body: UpdateOrderDto){
+        return this.ordersService.updateInfo(parseInt(id), body);
     }
 
     //atualizar itens de um pedido

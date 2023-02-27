@@ -1,0 +1,2 @@
+###Busca um endereço pelo cep
+GET http://localhost:3000/addresses/05302031

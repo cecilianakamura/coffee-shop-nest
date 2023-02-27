@@ -56,7 +56,7 @@ export class OrdersService {
     return this.repoOrder.find({ where: { status } });
   }
 
-  async updateStatus(id: number, attrs: Partial<Order>) {
+  async updateInfo(id: number, attrs: Partial<Order>) {
     const order = await this.repoOrder.findOneBy({id});
     if (!order) {
       throw new Error('Pedido não encontrado');
