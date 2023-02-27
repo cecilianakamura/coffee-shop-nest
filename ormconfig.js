@@ -1,5 +1,5 @@
-const dbConfig = {
-
+var dbConfig = {
+    synchronize: false,
 };
 
 switch (process.env.NODE_ENV){
